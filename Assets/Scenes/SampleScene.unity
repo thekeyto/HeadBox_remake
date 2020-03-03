@@ -138,7 +138,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &22787405
+--- !u!114 &22787404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcc22384353c6a48895e081ffd47987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  angularSpeed: 0
   number: 1
 --- !u!1001 &325615026
 PrefabInstance:

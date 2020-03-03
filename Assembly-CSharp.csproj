@@ -64,8 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\enemyspawner.cs" />
-    <Compile Include="Assets\RFX_Resources\Scripts\Destroy.cs" />
-    <Compile Include="Assets\RFX_Resources\Scripts\ParticleScaler.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -78,7 +76,6 @@
     <Compile Include="Assets\Suriyun\Scripts\Swapper.cs" />
     <None Include="Assets\Suriyun\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\RFX_Resources\Scripts\HowtoPlay.txt" />
     <None Include="Assets\RFX_Resources\Prefabs\Fx\V2\V2_Change.txt" />
     <None Include="Assets\read me.txt" />
     <None Include="Assets\Suriyun\UnityChanShader\Shader\CharaMain.cginc" />
