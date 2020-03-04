@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\enemyspawner.cs" />
+    <Compile Include="Assets\Scripts\boxSpawner.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -71,7 +71,9 @@
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\RedBox.cs" />
     <Compile Include="Assets\Scripts\sceneCotroller.cs" />
+    <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Suriyun\Scripts\AnimatorController.cs" />
     <Compile Include="Assets\Suriyun\Scripts\Swapper.cs" />
     <None Include="Assets\Suriyun\UnityChanShader\Shader\Unitychan_chara_eye.shader" />

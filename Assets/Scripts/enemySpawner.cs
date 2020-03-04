@@ -6,7 +6,6 @@ public class enemySpawner : MonoBehaviour
 {
     public GameObject enemy;
     private Transform[] BornArea;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +24,6 @@ public class enemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
