@@ -5,8 +5,8 @@ using UnityEngine;
 public class sceneCotroller : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject player1;
-    public GameObject player2;
+    public Player player1;
+    public Player player2;
     public GameObject redbox;
     public int enemyCount;
     public float nowtime;
@@ -24,8 +24,6 @@ public class sceneCotroller : MonoBehaviour
         gameOver = false;
         nowtime = 31;//进入第一轮
         redbox = gameObject.GetComponent<GameObject>();
-        player1 = gameObject.GetComponent<GameObject>();
-        player2 = gameObject.GetComponent<GameObject>();
         enemyspawner = Singleton<enemySpawner>.Instance;
         boxspawner = Singleton<boxSpawner>.Instance;
     }
@@ -80,5 +78,6 @@ public class sceneCotroller : MonoBehaviour
             spawn(enemynumbers);
             flag2 = true;
         }
+        if (player1.gethp() <= 0 && player2.gethp() <= 0) setGameover();
     }
 }
