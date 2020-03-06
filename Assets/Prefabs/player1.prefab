@@ -4401,6 +4401,7 @@ GameObject:
   - component: {fileID: 2174847926437784333}
   - component: {fileID: 2291689961651654871}
   - component: {fileID: 2291689961651654865}
+  - component: {fileID: 3376296702568277611}
   - component: {fileID: 2291689961651654870}
   - component: {fileID: 195722025112444384}
   m_Layer: 0
@@ -4485,6 +4486,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3376296702568277611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2291833451029902757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3cef3a64e620df4bb8c2282e3b01757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bullets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ableweapon: 
 --- !u!114 &2291689961651654870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4502,6 +4540,9 @@ MonoBehaviour:
   number: 1
   hpslider: {fileID: 0}
   totalhp: 0
+  level: 0
+  hp: 100
+  attack: {fileID: 0}
 --- !u!195 &195722025112444384
 NavMeshAgent:
   m_ObjectHideFlags: 0

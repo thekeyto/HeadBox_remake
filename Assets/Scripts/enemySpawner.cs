@@ -18,8 +18,7 @@ public class enemySpawner : MonoBehaviour
     {
         int i = Random.Range(0, 3);
         while (i < 0 || i > 3) i = Random.Range(0, 3);
-        GameObject newZomby = Instantiate<GameObject>(enemy) as GameObject;
-        newZomby.transform.position = new Vector3(BornArea[i].position.x, BornArea[i].position.y, BornArea[i].position.z);
+        GameObject.Instantiate(enemy, BornArea[i].position, BornArea[i].rotation);
     }
     // Update is called once per frame
     void Update()

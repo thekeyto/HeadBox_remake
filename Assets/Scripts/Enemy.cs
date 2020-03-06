@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float hp1, hp2;
     public bool gameover;
 
+    private GameObject player1;
+    private GameObject player2;
     private float hp;
     private float nowtime = 1;
     private int[] Damage;
@@ -44,73 +46,73 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Player player1= GameObject.Find("player1").gameObject.GetComponent<Player>();
-        Player player2= GameObject.Find("player1").gameObject.GetComponent<Player>();
-        hp1 = GameObject.Find("player1").gameObject.GetComponent<Player>().hp;
-        hp2 = GameObject.Find("player2").gameObject.GetComponent<Player>().hp;
-        player1Location = GameObject.Find("player1").gameObject.GetComponent<Transform>().position;
-        player2Location = GameObject.Find("player2").gameObject.GetComponent<Transform>().position;
+        player1 = GameObject.Find("player1");
+        player2 = GameObject.Find("player2");
+        hp1 = player1.GetComponent<Player>().gethp();
+        hp2 = player2.GetComponent<Player>().gethp();
+        player1Location = player1.gameObject.GetComponent<Transform>().position;
+        player2Location = player2.gameObject.GetComponent<Transform>().position;
         hpslider.value = hp / totalhp;
         nowtime += Time.deltaTime;
-        if (hp1 > 0 || hp2 > 0)
+        if (nowtime >= 1.0f)
         {
-            if (Vector3.Distance(this.transform.position, player1Location) <= 3.5f)
+            nowtime = 0;
+            if (hp1 > 0 || hp2 > 0)
             {
-                ani.SetBool("attack", true);
-            }
-            else
-            if (Vector3.Distance(this.transform.position, player2Location) <= 3.5f)
-            {
-                ani.SetBool("attack", true);
-            }
-            else
-            {
-                ani.SetBool("attack", false);
-                if (nowtime >= 1)
+                if (Vector3.Distance(this.transform.position, player1Location) <= 3.5f)
                 {
-                    nowtime = 0;//每一秒设置一次路径
-                    agent.ResetPath();
-                    if (hp1 > 0 && hp2 > 0)
-                    {
-                        if (Vector3.Distance(this.transform.position, player1Location) < Vector3.Distance(this.transform.position, player2Location))
+                    ani.SetBool("attack", true);
+                }
+                else
+                if (Vector3.Distance(this.transform.position, player2Location) <= 3.5f)
+                {
+                    ani.SetBool("attack", true);
+                }
+                else
+                {
+                    ani.SetBool("attack", false);
+                        agent.ResetPath();
+                        if (hp1 > 0 && hp2 > 0)
+                        {
+                            if (Vector3.Distance(this.transform.position, player1Location) < Vector3.Distance(this.transform.position, player2Location))
+                                attackplayer1();
+                            else attackplayer2();
+                        }
+                        else
+                        if (hp1 <= 0) //控制动画
+                        {
+                            attackplayer2();
+                        }
+                        else
+                        if (hp2 <= 0) //控制动画
+                        {
                             attackplayer1();
-                        else attackplayer2();
-                    }
-                    else
-                    if (hp1 <= 0) //控制动画
-                    {
-                        attackplayer2();
-                    }
-                    else
-                    if (hp2 <= 0) //控制动画
-                    {
-                        attackplayer1();
-                    }
-                    else ani.SetBool("run", false);
+                        }
+                        else ani.SetBool("run", false);
                 }
             }
+            else agent.ResetPath();
         }
-        else agent.ResetPath();
     }
     void OnCollisionEnter(Collision collision)
     {
-         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 3.5f);
+        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 3.5f);
         foreach (var collider in colliders)
         {
 
             if (collider.tag == "player")
-         {       collider.SendMessage("TakeDamage"); debug = 1;
-        }
+                collider.SendMessage("TakeDamage");
          }
     }
-    void takeDamage(int weapon)
+    void takeDamage(float damage)
     {
-        hp -= Damage[weapon];
+        hp -= damage;
+        debug = 1;
         if (hp <= 0)
         {
             ani.SetBool("death", true);
-            GameObject.Destroy(this.gameObject, 1.18f);//播放死亡动画后消失
             agent.ResetPath();
+            GameObject.Destroy(this.gameObject, 1.18f);//播放死亡动画后消失
         }
     }
 }

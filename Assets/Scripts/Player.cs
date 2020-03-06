@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     public Slider hpslider;
     public float totalhp;
     public int level;
+    public int debug;
     public float hp = 100.0f;
 
     private GameObject player;
+    public playerAttack attack;
     private float v;
     private bool isdie = false;
     private float h;
@@ -59,7 +61,7 @@ public class Player : MonoBehaviour
             ani.SetBool("movebackward", true);
         }
         else ani.SetBool("movebackward", false);
-        if (Input.GetKey(KeyCode.K)||Input.GetKey(KeyCode.Minus))//既然有跳跃动作，那就干脆用了吧
+        if ((Input.GetKey(KeyCode.K)&&number==1)||(number==2&&Input.GetKey(KeyCode.Keypad2)))//既然有跳跃动作，那就干脆用了吧
         {
             ani.SetBool("jump", true);
         }
@@ -68,11 +70,22 @@ public class Player : MonoBehaviour
     }
     void GetIt()
     {
+        attack = gameObject.GetComponent<playerAttack>();
         hp = hp + 50 > 100 ? 100 : hp + 50;//为了更有策略性拾取红盒，每次+50hp
+        for (int i = 1; i <= level / 5 - 1; i++) 
+            attack.bulletnumbers[i] = attack.bulletnumbers[i] + attack.fullbulletnumbers[i] > attack.fullbulletnumbers[i] ? attack.fullbulletnumbers[i] : attack.bulletnumbers[i] + attack.fullbulletnumbers[i];
         level++;
+        if (level % 5 == 0)//每五级解锁一把枪械
+        {
+            debug = 2;
+            attack.totalweapon++;
+            if (attack.totalweapon==2) debug = 3;
+        }
     }
     public void TakeDamage()
     {
         hp -= 10.0f;
+        ani.SetBool("damage", true);
+        ani.SetBool("damage", false);
     }
 }
