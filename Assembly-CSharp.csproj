@@ -63,7 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FluxY's Studio Assets\Low Poly Grenades\Files\Scripts\GrenadesHolder.cs" />
+    <Compile Include="Assets\FluxY's Studio Assets\Low Poly Grenades\Files\Scripts\GrenadesZoom.cs" />
+    <Compile Include="Assets\FluxY's Studio Assets\Low Poly Grenades\Files\Scripts\RotateGrenades.cs" />
     <Compile Include="Assets\Scripts\boss.cs" />
+    <Compile Include="Assets\Scripts\bossBullet.cs" />
     <Compile Include="Assets\Scripts\bossspawner.cs" />
     <Compile Include="Assets\Scripts\boxSpawner.cs" />
     <Compile Include="Assets\Scripts\bullet.cs" />
@@ -71,6 +75,7 @@
     <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\enemySpawner.cs" />
+    <Compile Include="Assets\Scripts\genade.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\playerAttack.cs" />
@@ -78,6 +83,7 @@
     <Compile Include="Assets\Scripts\RedBox.cs" />
     <Compile Include="Assets\Scripts\sceneCotroller.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\whitewall.cs" />
     <Compile Include="Assets\Suriyun\Scripts\AnimatorController.cs" />
     <Compile Include="Assets\Suriyun\Scripts\Swapper.cs" />
     <None Include="Assets\Suriyun\UnityChanShader\Shader\Unitychan_chara_eye.shader" />

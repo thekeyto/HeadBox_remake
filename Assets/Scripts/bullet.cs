@@ -23,6 +23,8 @@ public class bullet : MonoBehaviour
     {
         GameObject.Destroy(this.gameObject);
         if (other.tag == "enemy")
-            other.SendMessage("takeDamage",damage[nowWeapon]);
+            other.SendMessage("TakeDamage",damage[nowWeapon]);
+        if (other.tag == "wall")
+            other.SendMessage("TakeDamage",damage[nowWeapon]);
     }
 }

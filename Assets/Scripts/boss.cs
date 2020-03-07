@@ -1,50 +1,62 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class boss : MonoBehaviour
 {
-    public float totalhp = 100;
+    public float totalhp;
     public float Speed;
     public Slider hpslider;
     public int debug;
     public float hp1, hp2;
     public bool gameover;
+    public GameObject bullet;
 
     private GameObject player1;
     private GameObject player2;
-    private float hp;
+    public float hp;
     private float nowtime = 1;
     private int[] Damage;
-    private Animator ani;
+    private Animation ani;
     private NavMeshAgent agent;
     private Vector3 player1Location;
     private Vector3 player2Location;
+    private bool isdamage;
+    private float damagetime;
     // Start is called before the first frame update
     void Start()
     {
-        ani = gameObject.GetComponent<Animator>();
+        ani = gameObject.GetComponent<Animation>();
         Damage = new int[50];
         hpslider.value = 1;
         agent = gameObject.GetComponent<NavMeshAgent>();
-        agent.speed = Speed;
         hp = totalhp;
+        agent.speed = Speed;
     }
     void attackplayer1()
     {
         //debug = 1;
         agent.SetDestination(player1Location);
-        ani.SetBool("run", true);
+        ani.Play("move");
     }
     void attackplayer2()
     {
         //debug = 2;
         agent.SetDestination(player2Location);
-        ani.SetBool("run", true);
+        ani.Play("move");
+    }
+    void attack()
+    {
+        Transform firePosition = transform.Find("firePosition");
+        GameObject go = GameObject.Instantiate(bullet, firePosition.position, firePosition.rotation) as GameObject;
+        go.GetComponent<Rigidbody>().velocity = go.transform.forward * 10;
     }
     // Update is called once per frame
     void Update()
     {
+        if (hp == 0) return;
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
         hp1 = player1.GetComponent<Player>().gethp();
@@ -53,23 +65,29 @@ public class boss : MonoBehaviour
         player2Location = player2.gameObject.GetComponent<Transform>().position;
         hpslider.value = hp / totalhp;
         nowtime += Time.deltaTime;
-        if (nowtime >= 1.0f)
+        damagetime += Time.deltaTime;
+        if (damagetime >= 0.5 && isdamage == true) isdamage = false;
+        else
+        if (nowtime >= 1.5f)
         {
             nowtime = 0;
             if (hp1 > 0 || hp2 > 0)
             {
-                if (Vector3.Distance(this.transform.position, player1Location) <= 3.5f)
+                if (Vector3.Distance(this.transform.position, player1Location) <= 20.5f && hp1 > 0)
                 {
-                    ani.SetBool("attack", true);
+                    transform.LookAt(player1Location);
+                    ani.Play("attack1");
+                    attack();
                 }
                 else
-                if (Vector3.Distance(this.transform.position, player2Location) <= 3.5f)
+                if (Vector3.Distance(this.transform.position, player2Location) <= 20.5f && hp2 > 0)
                 {
-                    ani.SetBool("attack", true);
+                    transform.LookAt(player2Location);
+                    ani.Play("attack1");
+                    attack();
                 }
                 else
                 {
-                    ani.SetBool("attack", false);
                     agent.ResetPath();
                     if (hp1 > 0 && hp2 > 0)
                     {
@@ -87,29 +105,21 @@ public class boss : MonoBehaviour
                     {
                         attackplayer1();
                     }
-                    else ani.SetBool("run", false);
+                    else ani.Play("idle");
                 }
             }
             else agent.ResetPath();
         }
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 3.5f);
-        foreach (var collider in colliders)
-        {
-
-            if (collider.tag == "player")
-                collider.SendMessage("TakeDamage");
-        }
-    }
-    void takeDamage(float damage)
+    void TakeDamage(float damage)
     {
         hp -= damage;
-        debug = 1;
+        damagetime = 0;
+        isdamage = true;
+        if (hp < 0) hp = 0;
         if (hp <= 0)
         {
-            ani.SetBool("death", true);
+            ani.Play("die");
             agent.ResetPath();
             GameObject.Destroy(this.gameObject, 1.18f);//播放死亡动画后消失
         }

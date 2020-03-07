@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerAttack : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class playerAttack : MonoBehaviour
 
     public GameObject[] weapons = new GameObject[11];//武器预制
     public GameObject[] bullets = new GameObject[11];//子弹预制
+    public Text text;
     public int debug;
     public int number;
 
@@ -52,9 +54,14 @@ public class playerAttack : MonoBehaviour
             go.GetComponent<Rigidbody>().velocity = go.transform.forward * speed[nowWeapon];
         }
     }
+    void updateText()
+    {
+        text.text = "nowWeapon:"+nowWeapon+" bullet:"+bulletnumbers[nowWeapon];
+    }
     // Update is called once per frame
     void Update()
     {
+        updateText();
         weapontime[nowWeapon] += Time.deltaTime;
         nowgun.transform.position = transform.Find("gunplace").position;
         nowgun.transform.rotation = transform.Find("gunplace").rotation;
