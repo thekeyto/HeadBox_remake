@@ -10,7 +10,7 @@ public class whitewall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = hp / 100.0f;
+        slider.value = hp / 300.0f;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class whitewall : MonoBehaviour
     {
         hp -= damage;
         if (hp < 0) hp = 0;
-        slider.value = hp / 100.0f;
+        slider.value = hp / 300.0f;
         if (hp <= 0) GameObject.Destroy(this.gameObject);
     }
 }
