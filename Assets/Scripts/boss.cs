@@ -58,6 +58,7 @@ public class boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isdie == true) GameObject.Destroy(this.gameObject, 1.18f);
         if (hp == 0) return;
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
@@ -118,13 +119,15 @@ public class boss : MonoBehaviour
         hp -= damage;
         damagetime = 0;
         isdamage = true;
-        if (hp <= 0&&isdie==false)
+        debug = 1;
+        if (hp <= 0 && isdie == false)
         {
             isdie = true;
             hp = 0; GameObject.Find("gameController").gameObject.GetComponent<sceneCotroller>().nowenemnumber--;
+            Transform boxplace = transform.Find("boxplace");
+            GameObject.Instantiate(redbox,boxplace.position,boxplace.rotation);
             ani.Play("die");
             agent.ResetPath();
-            GameObject.Instantiate(redbox, transform.position, transform.rotation);
             GameObject.Destroy(this.gameObject, 1.18f);//播放死亡动画后消失
         }
     }

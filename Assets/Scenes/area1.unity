@@ -2870,5 +2870,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3376296702568277611, guid: b991f9274ecaeb449b1cb808cfa052fd,
+        type: 3}
+      propertyPath: totalweapon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2291689961651654870, guid: b991f9274ecaeb449b1cb808cfa052fd,
+        type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b991f9274ecaeb449b1cb808cfa052fd, type: 3}

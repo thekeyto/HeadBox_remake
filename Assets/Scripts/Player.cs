@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
     {
         attack = gameObject.GetComponent<playerAttack>();
         hp = hp + 50 > 100 ? 100 : hp + 50;//为了更有策略性拾取红盒，每次+50hp
-        for (int i = 1; i <= level / 5 - 1; i++) 
+        for (int i = 1; i <= attack.totalweapon; i++) 
             attack.bulletnumbers[i] = attack.bulletnumbers[i] + attack.fullbulletnumbers[i] > attack.fullbulletnumbers[i] ? attack.fullbulletnumbers[i] : attack.bulletnumbers[i] + attack.fullbulletnumbers[i];
         level++;
         attack.level++;

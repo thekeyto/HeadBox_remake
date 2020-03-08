@@ -1158,6 +1158,7 @@ MonoBehaviour:
   hp1: 0
   hp2: 0
   gameover: 0
+  hp: 0
 --- !u!195 &195582609830352422
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1190,10 +1191,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.21824384
+  m_Radius: 0.33381906
   m_Height: 1.9312904
   m_Direction: 1
-  m_Center: {x: 0, y: 0.93947446, z: 0.029407939}
+  m_Center: {x: -0.0062739057, y: 0.93947446, z: 0.029407939}
 --- !u!1 &3928901143889043680
 GameObject:
   m_ObjectHideFlags: 0
