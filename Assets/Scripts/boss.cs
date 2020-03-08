@@ -10,6 +10,7 @@ public class boss : MonoBehaviour
     public float Speed;
     public Slider hpslider;
     public int debug;
+    public GameObject redbox;
     public float hp1, hp2;
     public bool gameover;
     public GameObject bullet;
@@ -24,6 +25,7 @@ public class boss : MonoBehaviour
     private Vector3 player1Location;
     private Vector3 player2Location;
     private bool isdamage;
+    private bool isdie;
     private float damagetime;
     // Start is called before the first frame update
     void Start()
@@ -73,14 +75,14 @@ public class boss : MonoBehaviour
             nowtime = 0;
             if (hp1 > 0 || hp2 > 0)
             {
-                if (Vector3.Distance(this.transform.position, player1Location) <= 20.5f && hp1 > 0)
+                if (Vector3.Distance(this.transform.position, player1Location) <= 30.5f && hp1 > 0)
                 {
                     transform.LookAt(player1Location);
                     ani.Play("attack1");
                     attack();
                 }
                 else
-                if (Vector3.Distance(this.transform.position, player2Location) <= 20.5f && hp2 > 0)
+                if (Vector3.Distance(this.transform.position, player2Location) <= 30.5f && hp2 > 0)
                 {
                     transform.LookAt(player2Location);
                     ani.Play("attack1");
@@ -116,11 +118,13 @@ public class boss : MonoBehaviour
         hp -= damage;
         damagetime = 0;
         isdamage = true;
-        if (hp < 0) hp = 0;
-        if (hp <= 0)
+        if (hp <= 0&&isdie==false)
         {
+            isdie = true;
+            hp = 0; GameObject.Find("gameController").gameObject.GetComponent<sceneCotroller>().nowenemnumber--;
             ani.Play("die");
             agent.ResetPath();
+            GameObject.Instantiate(redbox, transform.position, transform.rotation);
             GameObject.Destroy(this.gameObject, 1.18f);//播放死亡动画后消失
         }
     }

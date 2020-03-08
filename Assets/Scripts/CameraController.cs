@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public Transform player1;
     public Transform player2;
+    public float debug;
 
     private Vector3 offset;
     private Camera camera;
@@ -13,29 +14,24 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         camera = this.GetComponent<Camera>();
+        player1 = GameObject.Find("player1").gameObject.GetComponent<Transform>();
+        player2 = GameObject.Find("player2").gameObject.GetComponent<Transform>();
         offset = transform.position - (player1.position + player2.position) / 2;
     }
 
+    float mypow(float x,float y)
+    {
+        return (x-y)*(x-y);
+    }
     // Update is called once per frame
     void Update()
     {
-        if (player1 == null)
-        {
-            camera.transform.position = new Vector3(player2.position.x, camera.transform.position.y, player2.position.z);
-        }
-        else
-        if (player2 == null)
-        {
-            camera.transform.position = new Vector3(player1.position.x, camera.transform.position.y, player1.position.z);
-        }
-        else
-        if (player1 == null && player2 == null) return;
-        else
-        {
-            transform.position = (player1.position + player2.position) / 2 + offset;
-            float distance = Vector3.Distance(player1.position, player2.position);
-            float size = distance * 0.58f;
-            camera.orthographicSize = size;
-        }
+        player1 = GameObject.Find("player1").gameObject.GetComponent<Transform>();
+        player2 = GameObject.Find("player2").gameObject.GetComponent<Transform>();
+        transform.position = (player1.position + player2.position) / 2 + offset;
+        float distance = Mathf.Sqrt(mypow(player1.position.x, player2.position.x)+ mypow(player1.position.y, player2.position.y)+ mypow(player1.position.z, player2.position.z)) ;
+        debug = distance;
+        float size = distance * 0.4f;
+        camera.fieldOfView = size+10.0f;
     }
 }

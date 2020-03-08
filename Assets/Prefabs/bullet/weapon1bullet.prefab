@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 114748965142054738}
   m_Layer: 0
   m_Name: weapon1bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,3 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844e700e42d387a4cb30b877761c2a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowWeapon: 5

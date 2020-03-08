@@ -106,6 +106,7 @@ public class Player : MonoBehaviour
         for (int i = 1; i <= level / 5 - 1; i++) 
             attack.bulletnumbers[i] = attack.bulletnumbers[i] + attack.fullbulletnumbers[i] > attack.fullbulletnumbers[i] ? attack.fullbulletnumbers[i] : attack.bulletnumbers[i] + attack.fullbulletnumbers[i];
         level++;
+        attack.level++;
         if (level % 5 == 0)//每五级解锁一把枪械
         {
             attack.totalweapon++;

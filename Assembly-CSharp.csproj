@@ -66,6 +66,9 @@
     <Compile Include="Assets\FluxY's Studio Assets\Low Poly Grenades\Files\Scripts\GrenadesHolder.cs" />
     <Compile Include="Assets\FluxY's Studio Assets\Low Poly Grenades\Files\Scripts\GrenadesZoom.cs" />
     <Compile Include="Assets\FluxY's Studio Assets\Low Poly Grenades\Files\Scripts\RotateGrenades.cs" />
+    <Compile Include="Assets\Scenes\GameMenu.cs" />
+    <Compile Include="Assets\Scenes\menuposition.cs" />
+    <Compile Include="Assets\Scenes\secmenu.cs" />
     <Compile Include="Assets\Scripts\boss.cs" />
     <Compile Include="Assets\Scripts\bossBullet.cs" />
     <Compile Include="Assets\Scripts\bossspawner.cs" />
