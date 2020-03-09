@@ -579,7 +579,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450941263
 GameObject:
@@ -2764,7 +2764,7 @@ PrefabInstance:
     - target: {fileID: 5538142521870465305, guid: adda756636d3b574ab1f731c4e68102c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5538142521870465305, guid: adda756636d3b574ab1f731c4e68102c,
         type: 3}
@@ -2869,16 +2869,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376296702568277611, guid: b991f9274ecaeb449b1cb808cfa052fd,
-        type: 3}
-      propertyPath: totalweapon
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2291689961651654870, guid: b991f9274ecaeb449b1cb808cfa052fd,
-        type: 3}
-      propertyPath: level
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b991f9274ecaeb449b1cb808cfa052fd, type: 3}

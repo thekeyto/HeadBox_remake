@@ -1,65 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &862282318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 862282319}
-  m_Layer: 0
-  m_Name: wallPlace
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &862282319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862282318}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: 1.534, z: 1.07}
-  m_LocalScale: {x: 0.35594943, y: 0.32772142, z: 0.38055485}
-  m_Children: []
-  m_Father: {fileID: 2288816099088603657}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &878378708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 878378709}
-  m_Layer: 0
-  m_Name: gunplace
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &878378709
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878378708}
-  m_LocalRotation: {x: -0, y: 0.025738522, z: 0, w: -0.9996688}
-  m_LocalPosition: {x: -0.013, y: 1.069, z: 0.414}
-  m_LocalScale: {x: 0.35594943, y: 0.32772142, z: 0.38055485}
-  m_Children: []
-  m_Father: {fileID: 2288816099088603657}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: -2.95, z: 0}
 --- !u!1 &1498673798
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,11 +24,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498673798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: 1.534, z: 1.07}
+  m_LocalPosition: {x: -0.12, y: 0.702, z: 1.07}
   m_LocalScale: {x: 0.35594943, y: 0.32772142, z: 0.38055485}
   m_Children: []
   m_Father: {fileID: 2288816099088603657}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1653668415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653668416}
+  m_Layer: 0
+  m_Name: grenadeplace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653668416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653668415}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.12000012, y: 1.56, z: 1.0700008}
+  m_LocalScale: {x: 0.35594958, y: 0.32772142, z: 0.38055506}
+  m_Children: []
+  m_Father: {fileID: 2288816099088603657}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880145282
 GameObject:
@@ -4627,8 +4597,7 @@ Transform:
   - {fileID: 2291689961463538074}
   - {fileID: 1880145283}
   - {fileID: 1498673799}
-  - {fileID: 878378709}
-  - {fileID: 862282319}
+  - {fileID: 1653668416}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180.03899, z: 0}
@@ -4728,7 +4697,7 @@ MonoBehaviour:
   debug: 0
   number: 1
   nowWeapon: 1
-  totalweapon: 10
+  totalweapon: 1
   level: 1
   bulletnumbers: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   fullbulletnumbers: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -4749,7 +4718,7 @@ MonoBehaviour:
   number: 1
   hpslider: {fileID: 2291689961607522943}
   totalhp: 100
-  level: 10
+  level: 1
   debug: 0
   hp: 100
   whitewall: {fileID: 4372875803622639566, guid: 4bf499cd2cc65d348ad2864e45e20ef9,

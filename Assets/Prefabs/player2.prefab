@@ -405,6 +405,7 @@ Transform:
   - {fileID: 5536431051524588170}
   - {fileID: 5987796657030749637}
   - {fileID: 5987796657115840863}
+  - {fileID: 4945703618737458356}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180.03899, z: 0}
@@ -7765,7 +7766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5987796657115840862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: 1.534, z: 1.07}
+  m_LocalPosition: {x: -0.12, y: 0.702, z: 1.07}
   m_LocalScale: {x: 0.35594943, y: 0.32772142, z: 0.38055485}
   m_Children: []
   m_Father: {fileID: 5538142521870465305}
@@ -7848,3 +7849,33 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 3
   m_Text: 
+--- !u!1 &8235088627290218529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4945703618737458356}
+  m_Layer: 0
+  m_Name: grenadeplace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4945703618737458356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235088627290218529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.12000012, y: 1.56, z: 1.0700008}
+  m_LocalScale: {x: 0.35594958, y: 0.32772142, z: 0.38055506}
+  m_Children: []
+  m_Father: {fileID: 5538142521870465305}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
